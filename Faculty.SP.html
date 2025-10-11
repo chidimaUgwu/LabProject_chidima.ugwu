@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Student_Dashboard.css">
+    <link rel="stylesheet" href="FI_Dashboard.css">
+    <link rel="stylesheet" href="sessionSchedule.css">
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="/images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">FACULTY DASHBOARD</h4>
+            <div class="user-info">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User"></div>
+                <div >
+                    <div class="user-name">Dr. John Doe</div>
+                    <div class="user-role">Professor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <nav>
+            <a href="Faculty_DashB.html" class="active" ><i class="fas fa-home"></i> <span>Dashboard</span>
+            <a href="Faculty_CM.html" ><i class="fas fa-book"></i> <span>Course Management</span></a>
+            <a href="Faculty_SO.html" ><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
+            <a href="Fculty_AR.html" ><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="Faculty.SP.html" ><i class="fas fa-chart-line"></i> <span>Student Performance</span></a>
+            <a href="#" ><i class="fas fa-user"></i> <span>Profile</span></a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
+        </nav>
+
+        <div id="welcomeboard">
+            <div class="welcome-section">
+                <div class="content">
+                    <!-- Student Performance Page -->
+                    <div id="student-performance" class="page">
+                        <h2 class="page-title">Student Performance</h2>
+                        
+                        <div class="card">
+                            <div class="card-header">Course Selection</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="performance-course">Select Course</label>
+                                    <select id="performance-course">
+                                        <option value="CS101">CS101 - Introduction to Programming</option>
+                                        <option value="CS201">CS201 - Object-Oriented Programming</option>
+                                        <option value="CS301">CS301 - Data Structures</option>
+                                        <option value="CS401">CS401 - Database Systems</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Student Performance</div>
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Student Name</th>
+                                                <th>Grade</th>
+                                                <th>Participation %</th>
+                                                <th>Comments</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Alice Johnson</td>
+                                                <td>A</td>
+                                                <td>95%</td>
+                                                <td>Excellent performance</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bob Smith</td>
+                                                <td>B+</td>
+                                                <td>85%</td>
+                                                <td>Good, but needs improvement in assignments</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Carol Williams</td>
+                                                <td>B</td>
+                                                <td>80%</td>
+                                                <td>Consistent performance</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>David Brown</td>
+                                                <td>C+</td>
+                                                <td>75%</td>
+                                                <td>Needs to participate more in class</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

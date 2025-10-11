@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Student_Dashboard.css">
+    <link rel="stylesheet" href="FI_Dashboard.css">
+    <link rel="stylesheet" href="sessionSchedule.css">
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="/images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">FACULTY DASHBOARD</h4>
+            <div class="user-info">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User"></div>
+                <div >
+                    <div class="user-name">Dr. John Doe</div>
+                    <div class="user-role">Professor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <nav>
+            <a href="#" class="active" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span>
+            <a href="#" data-section="Course Management"><i class="fas fa-book"></i> <span>Course Management</span></a>
+            <a href="#" data-section="Session Overview"><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
+            <a href="#" data-section="Attendance Reports"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="#" data-section="Student Performance"><i class="fas fa-chart-line"></i> <span>Student Performance</span></a>
+            <a href="#" data-section="profile"><i class="fas fa-user"></i> <span>Profile</span></a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
+        </nav>
+
+        <div id="welcomeboard">
+            <div class="welcome-section">
+                <div class="content">
+                    <!-- Attendance Reports Page -->
+                    <div id="attendance-reports" class="page">
+                        <h2 class="page-title">Attendance Reports</h2>
+                        
+                        <div class="card">
+                            <div class="card-header">Filters</div>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="course-filter">Course</label>
+                                        <select id="course-filter">
+                                            <option value="">All Courses</option>
+                                            <option value="CS101">CS101 - Introduction to Programming</option>
+                                            <option value="CS201">CS201 - Object-Oriented Programming</option>
+                                            <option value="CS301">CS301 - Data Structures</option>
+                                            <option value="CS401">CS401 - Database Systems</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-from">From Date</label>
+                                        <input type="date" id="date-from">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-to">To Date</label>
+                                        <input type="date" id="date-to">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary">Apply Filters</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Attendance Report</div>
+                            <div class="card-body">
+                                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                                    <button class="btn btn-success">Download PDF</button>
+                                    <button class="btn btn-warning">Export Excel</button>
+                                </div>
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Student Name</th>
+                                                <th>Total Classes</th>
+                                                <th>Attended</th>
+                                                <th>Attendance %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Alice Johnson</td>
+                                                <td>20</td>
+                                                <td>19</td>
+                                                <td>95%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bob Smith</td>
+                                                <td>20</td>
+                                                <td>18</td>
+                                                <td>90%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Carol Williams</td>
+                                                <td>20</td>
+                                                <td>17</td>
+                                                <td>85%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>David Brown</td>
+                                                <td>20</td>
+                                                <td>16</td>
+                                                <td>80%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

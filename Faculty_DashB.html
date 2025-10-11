@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Student_Dashboard.css">
+    <link rel="stylesheet" href="FI_Dashboard.css">
+    <link rel="stylesheet" href="sessionSchedule.css">
+    <link rel="stylesheet" href="faculty.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="/images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">FACULTY DASHBOARD</h4>
+            <div class="user-info">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User"></div>
+                <div >
+                    <div class="user-name">Dr. John Doe</div>
+                    <div class="user-role">Professor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <nav>
+            <a href="#" class="active" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span>
+            <a href="#" data-section="Course Management"><i class="fas fa-book"></i> <span>Course Management</span></a>
+            <a href="#" data-section="Session Overview"><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
+            <a href="#" data-section="Attendance Reports"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="#" data-section="Student Performance"><i class="fas fa-chart-line"></i> <span>Student Performance</span></a>
+            <a href="#" data-section="profile"><i class="fas fa-user"></i> <span>Profile</span></a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
+        </nav>
+
+        <div id="welcomeboard">
+            <div class="welcome-section">
+                <div class="content">
+                    <div id="dashboard" class="page active">
+                        <h2 class="page-title">Welcome, Dr. John Doe</h2>
+                        
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background-color: var(--primary);">📚</div>
+                                <div class="stat-info">
+                                    <h3>5</h3>
+                                    <p>Total Courses</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background-color: var(--success);">📅</div>
+                                <div class="stat-info">
+                                    <h3>3</h3>
+                                    <p>Upcoming Sessions</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background-color: var(--warning);">👥</div>
+                                <div class="stat-info">
+                                    <h3>87%</h3>
+                                    <p>Attendance Rate</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon" style="background-color: var(--danger);">📝</div>
+                                <div class="stat-info">
+                                    <h3>12</h3>
+                                    <p>Pending Evaluations</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Today's Sessions</div>
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Course</th>
+                                                <th>Time</th>
+                                                <th>Location</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CS101 - Introduction to Programming</td>
+                                                <td>10:00 AM - 11:30 AM</td>
+                                                <td>Room 302</td>
+                                                <td><span style="color: var(--success);">●</span> Upcoming</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CS301 - Data Structures</td>
+                                                <td>02:00 PM - 03:30 PM</td>
+                                                <td>Lab 4</td>
+                                                <td><span style="color: var(--success);">●</span> Upcoming</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Recent Notifications</div>
+                            <div class="card-body">
+                                <ul style="list-style-type: none;">
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                                        <strong>New assignment submitted</strong> - CS101 Assignment 3 by 15 students
+                                        <div style="color: var(--gray); font-size: 0.9rem;">2 hours ago</div>
+                                    </li>
+                                    <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                                        <strong>Department meeting scheduled</strong> - Friday, 10:00 AM
+                                        <div style="color: var(--gray); font-size: 0.9rem;">Yesterday</div>
+                                    </li>
+                                    <li style="padding: 10px 0;">
+                                        <strong>Course evaluation reminder</strong> - CS301 evaluations due next week
+                                        <div style="color: var(--gray); font-size: 0.9rem;">2 days ago</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
+
+
+<!-- Session Overview Page -->
+                    <div id="session-overview" class="page">
+                        <h2 class="page-title">Session Overview</h2>
+                        
+                        <div class="card">
+                            <div class="card-header">All Sessions</div>
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Course Name</th>
+                                                <th>Session Date & Time</th>
+                                                <th>Total Students</th>
+                                                <th>Attendance %</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CS101 - Introduction to Programming</td>
+                                                <td>Mon, 15 Apr 2024, 10:00 AM</td>
+                                                <td>45</td>
+                                                <td>92%</td>
+                                                <td><button class="btn btn-outline">View Details</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CS201 - Object-Oriented Programming</td>
+                                                <td>Tue, 16 Apr 2024, 09:00 AM</td>
+                                                <td>38</td>
+                                                <td>88%</td>
+                                                <td><button class="btn btn-outline">View Details</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CS301 - Data Structures</td>
+                                                <td>Wed, 17 Apr 2024, 02:00 PM</td>
+                                                <td>42</td>
+                                                <td>85%</td>
+                                                <td><button class="btn btn-outline">View Details</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CS401 - Database Systems</td>
+                                                <td>Thu, 18 Apr 2024, 11:00 AM</td>
+                                                <td>35</td>
+                                                <td>90%</td>
+                                                <td><button class="btn btn-outline">View Details</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Reports Page -->
+                    <div id="attendance-reports" class="page">
+                        <h2 class="page-title">Attendance Reports</h2>
+                        
+                        <div class="card">
+                            <div class="card-header">Filters</div>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="course-filter">Course</label>
+                                        <select id="course-filter">
+                                            <option value="">All Courses</option>
+                                            <option value="CS101">CS101 - Introduction to Programming</option>
+                                            <option value="CS201">CS201 - Object-Oriented Programming</option>
+                                            <option value="CS301">CS301 - Data Structures</option>
+                                            <option value="CS401">CS401 - Database Systems</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-from">From Date</label>
+                                        <input type="date" id="date-from">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-to">To Date</label>
+                                        <input type="date" id="date-to">
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary">Apply Filters</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Attendance Report</div>
+                            <div class="card-body">
+                                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                                    <button class="btn btn-success">Download PDF</button>
+                                    <button class="btn btn-warning">Export Excel</button>
+                                </div>
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Student Name</th>
+                                                <th>Total Classes</th>
+                                                <th>Attended</th>
+                                                <th>Attendance %</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Alice Johnson</td>
+                                                <td>20</td>
+                                                <td>19</td>
+                                                <td>95%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bob Smith</td>
+                                                <td>20</td>
+                                                <td>18</td>
+                                                <td>90%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Carol Williams</td>
+                                                <td>20</td>
+                                                <td>17</td>
+                                                <td>85%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>David Brown</td>
+                                                <td>20</td>
+                                                <td>16</td>
+                                                <td>80%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Performance Page -->
+                    <div id="student-performance" class="page">
+                        <h2 class="page-title">Student Performance</h2>
+                        
+                        <div class="card">
+                            <div class="card-header">Course Selection</div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="performance-course">Select Course</label>
+                                    <select id="performance-course">
+                                        <option value="CS101">CS101 - Introduction to Programming</option>
+                                        <option value="CS201">CS201 - Object-Oriented Programming</option>
+                                        <option value="CS301">CS301 - Data Structures</option>
+                                        <option value="CS401">CS401 - Database Systems</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">Student Performance</div>
+                            <div class="card-body">
+                                <div class="table-container">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Student Name</th>
+                                                <th>Grade</th>
+                                                <th>Participation %</th>
+                                                <th>Comments</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Alice Johnson</td>
+                                                <td>A</td>
+                                                <td>95%</td>
+                                                <td>Excellent performance</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bob Smith</td>
+                                                <td>B+</td>
+                                                <td>85%</td>
+                                                <td>Good, but needs improvement in assignments</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Carol Williams</td>
+                                                <td>B</td>
+                                                <td>80%</td>
+                                                <td>Consistent performance</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>David Brown</td>
+                                                <td>C+</td>
+                                                <td>75%</td>
+                                                <td>Needs to participate more in class</td>
+                                                <td><button class="btn btn-outline">Send Feedback</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

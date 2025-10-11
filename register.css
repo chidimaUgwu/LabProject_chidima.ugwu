@@ -1,0 +1,55 @@
+fieldset
+{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #3B0270;
+    border-style: dashed;
+    margin: 18px;
+    padding: 20px;
+    width: 90%;
+}
+
+legend
+{
+    margin-left: 5px;
+    text-align: left;
+    padding: 0 10px;
+    font-weight: bold;
+    color: #3B0270;
+    font-size: 18px;
+}
+
+input
+{
+    margin: 5px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+
+}
+
+#gender
+{
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #344F1F;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+    background-color: white;
+}
+
+.inputs
+{
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+
+}

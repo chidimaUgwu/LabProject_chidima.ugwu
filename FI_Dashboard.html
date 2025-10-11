@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Student_Dashboard.css">
+    <link rel="stylesheet" href="FI_Dashboard.css">
+    <link rel="stylesheet" href="sessionSchedule.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="/images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">FACULTY INTERN DASHBOARD</h4>
+            <div class="user-info">
+                <img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User">
+                <div class="user-details">
+                    <h4>Dr. Sarah Johnson</h4>
+                    <p>Faculty Intern</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <nav>
+            <a href="#" class="active" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span>
+            <a href="#" data-section="courses"><i class="fas fa-book"></i> <span>Course Management</span></a>
+            <a href="#" data-section="sessions"><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
+            <a href="#" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="#" data-section="performance"><i class="fas fa-chart-line"></i> <span>Student Performance</span></a>
+            <a href="#" data-section="profile"><i class="fas fa-user"></i> <span>Profile</span></a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
+        </nav>
+
+        <div id="welcomeboard">
+            <div class="welcome-section">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div id="tete">
+                           <h3>Total Courses</h3>
+                        </div>
+                        <div class="number">6</div>
+                    </div>
+                    <div class="stat-card">
+                        <div id="tete" style="background-color: #344F1F ; border:#344F1F;">
+                            <h3>Upcoming Sessions</h3>
+                        </div>
+                        <div class="number">3</div>
+                    </div>
+                    <div class="stat-card">
+                        <div id="tete"><h3>Students</h3></div>
+                        <div class="number">125</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div id="tete"><h3>Attendance Rate</h3></div>
+                        <div class="number">87%</div>
+                    </div>
+                </div>
+            
+
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <button class="btn btn-outline"><i class="fas fa-download"></i> Export Report</button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Activity</th>
+                                <th>Course</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-10-26</td>
+                                <td>Data Structures & Algorithms Session</td>
+                                <td>CS201</td>
+                                <td><span class="status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-10-24</td>
+                                <td>Calculus I Assignment Graded</td>
+                                <td>MATH101</td>
+                                <td><span class="status-upcoming">Upcoming</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-10-22</td>
+                                <td>Web Development Lab</td>
+                                <td>CS301</td>
+                                <td><span class="status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>2024-11-02</td>
+                                <td>Database Systems Session</td>
+                                <td>CS401</td>
+                                <td><span class="status-upcoming">Upcoming</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
+            </div>  
+        </div>
+    </div>
+    
+</body>
+</html>
