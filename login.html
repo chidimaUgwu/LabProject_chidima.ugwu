@@ -1,36 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/East Bouvent" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://fonts.cdnfonts.com/css/East-Bouvent" rel="stylesheet" />
   <title>Login</title>
 </head>
 <body>
-  <img src="/images/logo.png" alt="Company Logo" srcset="">
+  <img src="/images/logo.png" alt="Company Logo">
+
   <div id="container">
     <h2>Welcome Back to ATTENDIFY</h2>
     <div id="info">
-      <p>" Your attendance management system.<br>Please <b>log in</b> to continue. "</p>
+      <p>
+        " Your attendance management system.<br>
+        Please <b>log in</b> to continue. "
+      </p>
     </div>
-    <form class="forms">
-      <input class="inputs" type="email" name="uemail" placeholder="Username or Email" required>
-      <input class="inputs" type="password" placeholder="Password" required>
+
+    <form class="forms" id="logingForm">
+      <input class="inputs" type="email" placeholder="Email" id="signinEmail" required>
+      <input class="inputs" type="password" placeholder="Password" id="signinPassword" required>
 
       <label for="role">Role Selection</label>
       <select class="inputsselect" id="role" name="role" required>
         <option value="Student">Student</option>
-        <option value="Faculty Intern">Faculty</option>
+        <option value="Faculty Intern">Faculty Intern</option>
         <option value="Instructor">Instructor</option>
       </select>
 
       <button type="submit">LOG IN</button>
-      <!-- <input class="submition" type="submit" value="LOG IN"> -->
+
+      <!-- Error message placeholder -->
+      <p id="signinError" style="color: red; margin-top: 10px;"></p>
+
       <a href="#">Forgot Password?</a>
-      <p>Don't have an account? <a id="signup-link" style="display: block;" href="register.html">Sign Up</a></p>
+      <p>Don't have an account? <a id="signup-link" href="register.html">Sign Up</a></p>
     </form>
   </div>
-  
+
+  <!-- Link your JavaScript at the bottom -->
+  <script src="Script/loging.js"></script>
 </body>
 </html>
