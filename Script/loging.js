@@ -3,6 +3,7 @@ document.getElementById('logingForm').addEventListener('submit', function(event)
 
   let email = document.getElementById('signinEmail').value.trim();
   let password = document.getElementById('signinPassword').value;
+  let role = document.getElementById('role').value;
   let error = document.getElementById('signinError');
 
   error.textContent = "";
@@ -31,14 +32,19 @@ document.getElementById('logingForm').addEventListener('submit', function(event)
   }
 
   // Success message
-  alert("✅ Sign in successful!");
+  alert("Sign in successful!");
 
-  // Redirect user to corresponding dashboard
-  if (role === "student") {
-    window.location.href = "../Student_Dashboard.html";
+ // Redirect user to corresponding dashboard
+  if (role === "student") 
+  {
+    window.location.href = "Student_Dashboard.html";
   } else if (role === "faculty") {
-    window.location.href = "../FI_Dashboard.html";
+    window.location.href = "FI_Dashboard.html";
   } else if (role === "instructor") {
-    window.location.href = "../Faculty_DashB.html";
+    window.location.href = "Faculty_DashB.html";
+  }
+  else {
+    error.textContent = "Invalid role!" <br> "Please select a valid role.";
+    return;
   }
 });

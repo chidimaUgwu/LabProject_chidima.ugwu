@@ -51,10 +51,14 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
   // Redirect user to corresponding dashboard
   if (role === "student") {
-    window.location.href = "../Student_Dashboard.html";
+    window.location.href = "Student_Dashboard.html";
   } else if (role === "faculty") {
-    window.location.href = "../FI_Dashboard.html";
+    window.location.href = "FI_Dashboard.html";
   } else if (role === "instructor") {
-    window.location.href = "../Faculty_DashB.html";
+    window.location.href = "Faculty_DashB.html";
+  }
+  else {
+    error.textContent = "Invalid role!" <br> "Please select a valid role.";
+    return;
   }
 });

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard Course Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/Student_Dashboard.css">
+    <link rel="stylesheet" href="styles/sessionSchedule.css">
+    <link rel="stylesheet" href="styles/FI_Dashboard.css">
+
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --success: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --danger: #e63946;
+            --warning: #fca311;
+            --sidebar-width: 250px;
+            --header-height: 70px;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">FACULTY INTERN DASHBOARD</h4>
+            <div class="user-info">
+                <img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User">
+                <div class="user-details">
+                    <h4>Dr. Sarah Johnson</h4>
+                    <p>Faculty Intern</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <nav>
+            <a href="FI_Dashboard.html"  data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span>
+            <a href="FI_CourseManagement.html" data-section="courses"><i class="fas fa-book"></i> <span>Course Management</span></a>
+            <a href="sessions.html" class="active" data-section="sessions"><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
+            <a href="attendance.html" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="performance.html" data-section="performance"><i class="fas fa-chart-line"></i> <span>Student Performance</span></a>
+            <a href="#" data-section="profile"><i class="fas fa-user"></i> <span>Profile</span></a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
+        </nav>
+
+        <div id="welcomeboard">
+            <div class="welcome-section">
+                
+        <section id="sessions" class="content-section">
+            <div class="section-header">
+                <h2>Session Overview</h2>
+                <div>
+                    <select class="form-control" style="width: auto; display: inline-block; margin-right: 10px;">
+                        <option>All Courses</option>
+                        <option>CS201</option>
+                        <option>MATH101</option>
+                        <option>CS301</option>
+                        <option>CS401</option>
+                    </select>
+                    <button class="btn"><i class="fas fa-plus"></i> Schedule Session</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Course</th>
+                            <th>Instructor</th>
+                            <th>Attendance</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-10-26</td>
+                            <td>19:00</td>
+                            <td>Data Structures & Algorithms</td>
+                            <td>Prof. Kwesi Atta</td>
+                            <td>42/45 (93%)</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-11-02</td>
+                            <td>14:30</td>
+                            <td>Calculus I</td>
+                            <td>Dr. John Smith</td>
+                            <td>-</td>
+                            <td><span class="status upcoming">Upcoming</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-11-05</td>
+                            <td>10:00</td>
+                            <td>Web Development</td>
+                            <td>Prof. Maria Garcia</td>
+                            <td>-</td>
+                            <td><span class="status upcoming">Upcoming</span></td>
+                        </tr>
+                        <tr>
+                            <td>2024-11-09</td>
+                            <td>16:45</td>
+                            <td>Database Systems</td>
+                            <td>Dr. James Wilson</td>
+                            <td>-</td>
+                            <td><span class="status upcoming">Upcoming</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>   
+</body>
+</html>
