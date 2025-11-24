@@ -1,0 +1,148 @@
+.forms {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .inputs {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+    .inputs:focus {
+        outline: none;
+        border-color: #F4991A;
+        box-shadow: 0 0 5px rgba(244, 153, 26, 0.3);
+    }
+    
+fieldset
+{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #3B0270;
+    border-style: dashed;
+    margin: 18px;
+    padding: 20px;
+    width: 90%;
+}
+
+legend
+{
+    margin-left: 5px;
+    text-align: left;
+    padding: 0 10px;
+    font-weight: bold;
+    color: #3B0270;
+    font-size: 18px;
+}
+
+input
+{
+    margin: 5px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+
+}
+
+#gender
+{
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #344F1F;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+    background-color: white;
+}
+
+.inputs
+{
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+
+}
+
+.phone-container 
+{
+    display: flex;
+    flex-direction: column;
+    gap: -100px;
+    align-items: center;
+}
+
+.phone-number {
+        width: 70%;
+    }
+
+
+button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #F4991A;
+        border: none;
+        border-radius: 15px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #c97205;
+    }
+
+    
+    .country-code {
+        width: 30%;
+        min-width: 120px;
+    }
+
+    
+
+  
+
+    .error-message {
+        color: red;
+        background: #ffe6e6;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .success-message {
+        color: green;
+        background: #e6ffe6;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    a {
+        color: #3B0270;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }

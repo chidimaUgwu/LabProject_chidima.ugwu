@@ -1,0 +1,170 @@
+.GradesReports-section
+{
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.GradesReports-section h2 
+{
+    color: #3B0270;
+    margin-bottom: 20px;
+}
+
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+.overall-performance 
+{
+    background: linear-gradient(135deg, white, #F2EAD3);
+    box-shadow: gray 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    color: #3B0270;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+thead tr 
+{
+    background: linear-gradient(135deg, #5e9038, #344F1F);
+    color: #F2EAD3;
+    text-align: left;
+}
+table
+{
+    width: 100%;
+    border-collapse:collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    
+}
+tbody tr:hover 
+{
+    background-color: #e8f0f8;
+}
+tbody tr 
+{
+    transition: background-color 0.2s;
+}
+th, td 
+{
+    padding: 15px 20px;
+    border-bottom: 1px solid #e1e1e1;
+}    
+.grade 
+{
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    min-width: 40px;
+}
+        
+.grade-a {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.grade-b {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.grade-c {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.grade-a-minus {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.performance-grade 
+{
+font-size: 26px;
+font-weight: bold;
+color: #F4991A;
+}
+
+.performance-comment {
+    font-size: 18px;
+    font-style: italic;
+}
+     
+tbody tr:last-of-type {
+    border-bottom: 2px solid #2c3e50;
+}
+        
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+        
+.filter-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.filter-option 
+{
+    padding: 8px 15px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-option:hover 
+{
+    background-color: #e1e1e1;
+}
+
+.filter-option.active {
+    background-color: #F4991A;
+    color: white;
+}
+        
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 10px 12px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    .overall-performance {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}

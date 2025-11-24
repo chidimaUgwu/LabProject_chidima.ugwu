@@ -1,17 +1,28 @@
+<?php require_once 'php/auth/auth_check.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>student Dashboard</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Student_Dashboard.css">
 </head>
 <body>
+    <!-- Rest of your HTML content -->
     <div class="top">
         <div class="logo-container">
             <img src="/images/logo.png" alt="Company Logo" srcset="">
             <h4 class="dashboard-title">STUDENT DASHBOARD</h4>
+        </div>
+            <div class="user-info">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Faculty+User&background=4361ee&color=fff" alt="User"></div>
+                <div >
+                <div class="user-name">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></div>
+                <div class="user-role">Student</div>
+            </div>
+                
+            </div>
         </div>
     </div>
     <div class="board">

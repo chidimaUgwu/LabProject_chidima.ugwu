@@ -6,6 +6,8 @@
   <title>Register</title>
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/register.css">
+  <!-- Add SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <img src="images/logo.png" alt="Company Logo">

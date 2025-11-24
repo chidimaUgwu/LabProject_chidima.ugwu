@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    // Redirect based on role
+    if ($_SESSION['role'] === 'student') {
+        header('Location: Student_Dashboard.php');
+    } else if ($_SESSION['role'] === 'faculty') {
+        header('Location: Faculty_DashB.php');
+    }
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles/style.css" />
   <link href="https://fonts.cdnfonts.com/css/East-Bouvent" rel="stylesheet" />
+  <!-- Add SweetAlert CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Login</title>
 </head>
 <body>
@@ -42,6 +56,6 @@
   </div>
 
   <!-- Link your JavaScript at the bottom -->
-  <script src="Script/loging.js"></script>
+  <script src="js/loging.js"></script>
 </body>
 </html>

@@ -1,0 +1,135 @@
+body 
+{
+    background-color: #F2EAD3 !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img
+{
+    width: 25%;
+    height: 25%;
+    display: block;
+    margin-top: -60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container
+{
+    border: 2px solid #F2EAD3;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 10px 5px 40px #3B0270;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 5%;
+    padding-top: -10px;
+}
+
+.forms
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.inputs
+{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+
+}
+
+h2
+{
+    color: #344F1F;
+}
+
+#info  
+{
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-family: 'East Bouvent', sans-serif;
+    line-height: 25px;
+    color: #3B0270;
+}
+
+label
+{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
+    color: #344F1F;
+    text-align: left;
+    width: 84%;
+}
+
+.inputsselect
+{
+    width: 84%;
+    padding: 10px;
+    border: 1px solid #344F1F;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 5px 5px 10px #3B0270;
+    background-color: white;
+}
+
+button
+{
+    width: 40%;
+    padding: 10px;
+    background-color: #F4991A ;
+    color: white;
+    border: 2px solid #F4991A ;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+#signup-link
+{
+    margin-left: 50px;
+    width: 40%;
+    padding: 10px;
+    background-color: #344F1F ;
+    border: 2px solid #344F1F ;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: none;
+}
+.user-info {
+            display: flex;
+            align-items: center;
+        }
+
+.user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .user-details h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .user-details p {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
