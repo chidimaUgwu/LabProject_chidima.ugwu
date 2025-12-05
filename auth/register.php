@@ -1,19 +1,24 @@
+<?php
+// C:\xampp\htdocs\Attandance\auth\register.php
+require_once '../config/session.php';
+redirectIfLoggedIn();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/register.css">
+  <title>Register - ATTENDIFY</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/register.css">
 </head>
 <body>
-  <img src="images/logo.png" alt="Company Logo">
+  <img src="../images/logo.png" alt="Company Logo">
 
   <div id="container">
     <h2>Create your account</h2>
 
-    <form class="forms" id="registerForm">
+    <form class="forms" id="registerForm" action="process_register.php" method="POST">
       <!-- PERSONAL INFO -->
       <fieldset>
         <legend>Personal Information</legend>
@@ -24,20 +29,20 @@
 
         <select class="inputs" id="gender" name="gender" required>
           <option value="">Select Gender</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
       </fieldset>
 
       <!-- CONTACT INFO -->
       <fieldset>
         <legend>Contact Information</legend>
-        <input class="inputs" type="email" id="uemail" name="uemail" placeholder="Enter your email" required>
+        <input class="inputs" type="email" id="uemail" name="email" placeholder="Enter your email" required>
 
         <!-- Country code + phone -->
         <div style="display: flex; gap: 5px;">
-          <select id="countryCode" class="inputs" style="width: 25%;">
+          <select id="countryCode" name="country_code" class="inputs" style="width: 25%;">
             <option value="+233">🇬🇭 +233</option>
             <option value="+234">🇳🇬 +234</option>
             <option value="+225">🇨🇮 +225</option>
@@ -65,12 +70,18 @@
       </fieldset>
 
       <button type="submit">Register</button>
-      <p id="registerError" style="color:red; margin-top:10px;"></p>
+      <p id="registerError" style="color:red; margin-top:10px;">
+        <?php 
+        if (isset($_GET['error'])) {
+            echo htmlspecialchars($_GET['error']);
+        }
+        ?>
+      </p>
 
-      <p>Already have an account? <a id="signup-link" href="login.html">Log In</a></p>
+      <p>Already have an account? <a id="signup-link" href="login.php">Log In</a></p>
     </form>
   </div>
 
-  <script src="Script/register.js"></script>
+  <script src="../Script/register.js"></script>
 </body>
 </html>
