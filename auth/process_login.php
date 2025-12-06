@@ -53,16 +53,16 @@ try {
             $_SESSION['dob'] = $user['dob'];
             $_SESSION['address'] = $user['address'];
             
-            // Redirect based on role from database
+            // FIX: Use absolute URLs with BASE_URL
             switch($user['role']) {
                 case 'student':
-                    header("Location: ../student/dashboard.php");
+                    header("Location: " . BASE_URL . "student/dashboard.php");
                     break;
                 case 'faculty':
-                    header("Location: ../fi/dashboard.php");
+                    header("Location: " . BASE_URL . "fi/dashboard.php");
                     break;
                 case 'instructor':
-                    header("Location: ../faculty/dashboard.php");
+                    header("Location: " . BASE_URL . "faculty/dashboard.php");
                     break;
                 default:
                     header("Location: login.php?error=Invalid user role in database.");
