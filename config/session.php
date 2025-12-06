@@ -1,10 +1,9 @@
 <?php
-// C:\xampp\htdocs\Attandance\config\session.php
-
+// Start PHP session
 session_start();
 
-// Define base URL
-define('BASE_URL', 'http://localhost/Attandance/');
+// Define base URL for the school host
+define('BASE_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/');
 define('BASE_PATH', dirname(__DIR__) . '/');
 
 // Check if user is logged in
@@ -20,7 +19,6 @@ function hasRole($role) {
 // Redirect to login if not authenticated
 function requireAuth() {
     if (!isLoggedIn()) {
-        // Store the page they tried to access
         $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
         header("Location: " . BASE_URL . "auth/login.php");
         exit();
@@ -77,7 +75,6 @@ function redirectAfterLogin() {
         header("Location: " . $redirect);
         exit();
     } else {
-        // Default to dashboard
         redirectIfLoggedIn();
     }
 }
