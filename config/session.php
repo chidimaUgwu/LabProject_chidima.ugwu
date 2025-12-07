@@ -1,27 +1,15 @@
 <?php
-// C:\xampp\htdocs\Attandance\config\session.php
-
+// Start PHP session
 session_start();
 
-// Dynamically detect base URL for both local and school server
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
-$host = $_SERVER['HTTP_HOST'];
-$script_path = dirname($_SERVER['SCRIPT_NAME']);
-
-// Clean up the path - remove any trailing slashes
-$script_path = rtrim($script_path, '/');
-
-// For school server: ~chidima.ugwu/attendance_php
-// For local: /Attandance
-define('BASE_URL', $protocol . $host . $script_path . '/');
-
-// Alternative approach if the above doesn't work:
-// define('BASE_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/');
-
-// For local testing, you can use this:
-// define('BASE_URL', 'http://localhost/Attandance/');
+// FIXED: Use the correct base URL for the ROOT of your application
+define('BASE_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/');
+define('ROOT_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/'); // Same as BASE_URL
+define('AUTH_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/auth/');
 
 define('BASE_PATH', dirname(__DIR__) . '/');
+define('ROOT_PATH', dirname(__DIR__) . '/');
+define('AUTH_PATH', __DIR__ . '/../auth/');
 
 // Check if user is logged in
 function isLoggedIn() {
@@ -36,11 +24,8 @@ function hasRole($role) {
 // Redirect to login if not authenticated
 function requireAuth() {
     if (!isLoggedIn()) {
-        // Store the page they tried to access
         $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
-        
-        // Use relative path instead of BASE_URL
-        header("Location: ../auth/login.php");
+        header("Location: " . AUTH_URL . "login.php");
         exit();
     }
 }
@@ -50,14 +35,12 @@ function redirectIfLoggedIn() {
     if (isLoggedIn()) {
         $role = $_SESSION['role'] ?? 'student';
         $dashboard = getDashboardForRole($role);
-        
-        // Use relative paths
-        header("Location: " . $dashboard);
+        header("Location: " . BASE_URL . $dashboard);
         exit();
     }
 }
 
-// Get dashboard URL for a role - use relative paths
+// Get dashboard URL for a role - returns RELATIVE path from ROOT
 function getDashboardForRole($role) {
     switch($role) {
         case 'student':
@@ -114,6 +97,63 @@ function isStudent() {
 function isInstructor() {
     return hasRole('instructor');
 }
+// // C:\xampp\htdocs\Attandance\config\session.php
+
+// session_start();
+
+// // Dynamically detect base URL for both local and school server
+// $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+// $host = $_SERVER['HTTP_HOST'];
+// $script_path = dirname($_SERVER['SCRIPT_NAME']);
+
+// // Clean up the path - remove any trailing slashes
+// $script_path = rtrim($script_path, '/');
+
+// // For school server: ~chidima.ugwu/attendance_php
+// // For local: /Attandance
+// define('BASE_URL', $protocol . $host . $script_path . '/');
+
+// // Alternative approach if the above doesn't work:
+// // define('BASE_URL', 'http://169.239.251.102:341/~chidima.ugwu/attendance_php/');
+
+// // For local testing, you can use this:
+// // define('BASE_URL', 'http://localhost/Attandance/');
+
+// define('BASE_PATH', dirname(__DIR__) . '/');
+
+// // Check if user is logged in
+// function isLoggedIn() {
+//     return isset($_SESSION['user_id']);
+// }
+
+// // Check if user has specific role
+// function hasRole($role) {
+//     return isset($_SESSION['role']) && $_SESSION['role'] === $role;
+// }
+
+// // Redirect to login if not authenticated
+// function requireAuth() {
+//     if (!isLoggedIn()) {
+//         // Store the page they tried to access
+//         $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
+        
+//         // Use relative path instead of BASE_URL
+//         header("Location: ../auth/login.php");
+//         exit();
+//     }
+// }
+
+// // Redirect to dashboard if already logged in
+// function redirectIfLoggedIn() {
+//     if (isLoggedIn()) {
+//         $role = $_SESSION['role'] ?? 'student';
+//         $dashboard = getDashboardForRole($role);
+        
+//         // Use relative paths
+//         header("Location: " . $dashboard);
+//         exit();
+//     }
+// }
 
 // // Start PHP session
 // session_start();
