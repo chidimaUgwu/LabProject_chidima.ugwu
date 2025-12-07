@@ -87,6 +87,8 @@ try {
     <title>My Attendance - Student Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/Student_Dashboard.css">
+    <link rel="stylesheet" href="../styles/sessionSchedule.css">
     <style>
         /* * {
             margin: 0;
