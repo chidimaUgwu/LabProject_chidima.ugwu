@@ -762,6 +762,7 @@ try {
     <div class="board">
         <nav>
             <a href="dashboard.php" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a>
+            <a href="courses.php" data-section="courses"><i class="fas fa-book"></i> <span>My Courses</span></a>
             <a href="enroll.php" data-section="enroll"><i class="fas fa-plus-circle"></i> <span>Enroll in Courses</span></a>
             <a href="attendance.php" class="active" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>My Attendance</span></a>
             <a href="mark_attendance.php" data-section="mark_attendance"><i class="fas fa-qrcode"></i> <span>Mark Attendance</span></a>
