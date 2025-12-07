@@ -392,15 +392,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mark_attendance'])) {
     </style>
 </head>
 <body>
+    <body>
     <div class="top">
         <div class="logo-container">
             <img src="../images/logo.png" alt="Company Logo" srcset="">
-            <h4 class="dashboard-title">FACULTY INTERN DASHBOARD</h4>
-            <div class="user-info">
-                <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['fname'] . '+' . $_SESSION['lname']); ?>&background=4361ee&color=fff" alt="User">
-                <div class="user-details">
-                    <h4><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></h4>
-                    <p><?php echo getRoleDisplayName($_SESSION['role']); ?></p>
+            <h4 class="dashboard-title">FACULTY DASHBOARD</h4>
+            <div class="user-info" style="margin-left: 500px; display: flex; align-items: center; gap: 10px;">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['fname'] . '+' . $_SESSION['lname']); ?>&background=4361ee&color=fff" alt="User"></div>
+                <div>
+                    <div class="user-name"><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></div>
+                    <div class="user-role"><?php echo getRoleDisplayName($_SESSION['role']); ?></div>
                 </div>
             </div>
         </div>
