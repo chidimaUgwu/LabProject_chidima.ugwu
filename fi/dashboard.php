@@ -120,7 +120,7 @@ try {
             <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
         </nav>
 
-        <div id="welcomeboard" style="background-color: #d6ffb7ff; WIDTH: 100%; padding: 20px; border-radius: 10px;">
+        <div id="welcomeboard" style="background-color: white; WIDTH: 1000%; padding: -20px; border-radius: 70px;">
             <div class="welcome-section" style="background-color: #d6ffb7ff; WIDTH: 100%; padding: 20px; border-radius: 10px;">
                 <div class="stats-container">
                     <div class="stat-card">
