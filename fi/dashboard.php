@@ -95,6 +95,145 @@ try {
     <link rel="stylesheet" href="../styles/FI_Dashboard.css">
     <link rel="stylesheet" href="../styles/faculty.css">
     <link rel="stylesheet" href="../styles/sessionSchedule.css">
+
+    <style>
+    /* WELCOME BOARD */
+    #welcomeboard {
+        padding: 20px;
+        background: #f5f6fa;
+        width: 100%;
+    }
+
+    .welcome-section {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    /* STAT CARDS */
+    .stats-container {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .stat-card {
+        flex: 1;
+        min-width: 220px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    #tete {
+        background-color: #1F4F7B;
+        padding: 12px;
+        text-align: center;
+        color: white;
+        border-bottom: 3px solid #143554;
+    }
+
+    /* NUMBER */
+    .number {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        color: #2c3e50;
+    }
+
+    /* HEADER SECTION */
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+        color: #1f2d3d;
+    }
+
+    /* BUTTON */
+    .btn-outline {
+        padding: 8px 16px;
+        border: 1px solid #1F4F7B;
+        background: white;
+        color: #1F4F7B;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+        background: #1F4F7B;
+        color: white;
+    }
+
+    /* TABLE */
+    .table-container {
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    table th {
+        background: #1F4F7B;
+        padding: 12px;
+        color: white;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+    }
+
+    /* STATUS BADGES */
+    .status-completed {
+        padding: 5px 10px;
+        background: #27ae60;
+        color: white;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .status-upcoming {
+        padding: 5px 10px;
+        background: #e67e22;
+        color: white;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    /* LOGOUT LINK */
+    nav a {
+        color: #c0392b;
+        font-size: 16px;
+        text-decoration: none;
+        padding: 8px 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #e74c3c;
+    }
+</style>
+
 </head>
 <body>
     <div class="top">
@@ -120,8 +259,8 @@ try {
             <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
         </nav>
 
-        <div id="welcomeboard" style="background-color: white; WIDTH: 1000%; padding: -20px; border-radius: 70px;">
-            <div class="welcome-section" style="background-color: #d6ffb7ff; WIDTH: 100%; padding: 20px; border-radius: 10px;">
+        <div id="welcomeboard">
+            <div class="welcome-section" >
                 <div class="stats-container">
                     <div class="stat-card">
                         <div id="tete">
