@@ -113,6 +113,221 @@ try {
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/Student_Dashboard.css">
     <link rel="stylesheet" href="../styles/sessionSchedule.css">
+
+
+    <style>
+    /* MAIN CONTAINER */
+    #welcomeboard {
+        padding: 20px;
+        width: 100%;
+        background: #f5f6fa;
+    }
+
+    .welcome-section {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    /* HEADER */
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+        color: #1F4F7B;
+        font-weight: bold;
+    }
+
+    /* BUTTONS */
+    .btn {
+        padding: 10px 15px;
+        background: #1F4F7B;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+
+    .btn:hover {
+        background: #143554;
+    }
+
+    .btn-outline {
+        background: white;
+        border: 1px solid #1F4F7B;
+        color: #1F4F7B;
+        padding: 10px 15px;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+        background: #1F4F7B;
+        color: white;
+    }
+
+    /* TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    table thead {
+        background: #1F4F7B;
+        color: white;
+    }
+
+    table th, table td {
+        padding: 12px;
+        border-bottom: 1px solid #e0e0e0;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    table tbody tr:hover {
+        background: #f1f5fb;
+    }
+
+    /* STATUS BADGES */
+    .status-completed {
+        background: #27ae60;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .status-Absent {
+        background: #e67e22;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    /* ACTION BUTTONS */
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .action-btn {
+        background: #eaf1f8;
+        border: none;
+        padding: 8px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 14px;
+        color: #1F4F7B;
+    }
+
+    .action-btn:hover {
+        background: #d3e1f0;
+    }
+
+    .action-btn.delete {
+        background: #f8d7da;
+        color: #721c24;
+    }
+
+    .action-btn.delete:hover {
+        background: #f5c6cb;
+    }
+
+    .action-btn.view {
+        background: #d4edda;
+        color: #155724;
+        padding: 8px 12px;
+        display: inline-block;
+    }
+
+    .action-btn.view:hover {
+        background: #c3e6cb;
+    }
+
+    /* MODAL */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: white;
+        width: 500px;
+        padding: 20px;
+        border-radius: 10px;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .modal-header h2 {
+        color: #1F4F7B;
+        font-size: 22px;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: #444;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 15px;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.95);}
+        to {opacity: 1; transform: scale(1);}
+    }
+</style>
+
 </head>
 <body>
     <div class="top">
