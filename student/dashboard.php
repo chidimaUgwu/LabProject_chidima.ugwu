@@ -460,7 +460,22 @@ try {
         }
     </style>
 </head>
+</head>
 <body>
+    <div class="top">
+        <div class="logo-container">
+            <img src="../images/logo.png" alt="Company Logo" srcset="">
+            <h4 class="dashboard-title">STUDENT DASHBOARD</h4>
+            <div class="user-info" style="margin-left: 500px; display: flex; align-items: center; gap: 10px;">
+                <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['fname'] . '+' . $_SESSION['lname']); ?>&background=4361ee&color=fff" alt="User"></div>
+                <div>
+                    <div class="user-name"><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></div>
+                    <div class="user-role"><?php echo getRoleDisplayName($_SESSION['role']); ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- <body>
     <div class="top">
         <div class="logo-container">
             <img src="../images/logo.png" alt="Company Logo" srcset="">
@@ -473,7 +488,7 @@ try {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <div class="board">
         <nav>
