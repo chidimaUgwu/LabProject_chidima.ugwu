@@ -464,7 +464,7 @@ try {
             <a href="dashboard.php" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a>
             <a href="courses.php" data-section="courses"><i class="fas fa-book"></i> <span>Course Management</span></a>
             <a href="sessions.php" data-section="sessions"><i class="fas fa-calendar-alt"></i> <span>Session Overview</span></a>
-            <a href="attendance_reports.php" class="active" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
+            <a href="attendance.php" class="active" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>Attendance Reports</span></a>
             <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
         </nav>
 
@@ -501,7 +501,7 @@ try {
                             <i class="fas fa-filter"></i> Apply Filters
                         </button>
                         <?php if ($filtered): ?>
-                        <a href="attendance_reports.php" class="btn" style="margin-left: 10px;">
+                        <a href="attendance.php" class="btn" style="margin-left: 10px;">
                             <i class="fas fa-times"></i> Clear Filters
                         </a>
                         <?php endif; ?>
@@ -613,7 +613,7 @@ try {
                         <?php echo $filtered ? 'No records match your filters.' : 'No attendance records available yet.'; ?>
                     </p>
                     <?php if ($filtered): ?>
-                    <a href="attendance_reports.php" class="btn">
+                    <a href="attendance.php" class="btn">
                         <i class="fas fa-times"></i> Clear Filters
                     </a>
                     <?php else: ?>
