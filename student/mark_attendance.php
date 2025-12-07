@@ -508,8 +508,6 @@ try {
             <a href="enroll.php" data-section="enroll"><i class="fas fa-plus-circle"></i> <span>Enroll in Courses</span></a>
             <a href="attendance.php" data-section="attendance"><i class="fas fa-clipboard-check"></i> <span>My Attendance</span></a>
             <a href="mark_attendance.php" class="active" data-section="mark_attendance"><i class="fas fa-qrcode"></i> <span>Mark Attendance</span></a>
-            <a href="performance.php" data-section="performance"><i class="fas fa-chart-line"></i> <span>Performance</span></a>
-            <a href="profile.php" data-section="profile"><i class="fas fa-user"></i> <span>Profile</span></a>
             <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>  
         </nav>
 
