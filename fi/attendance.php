@@ -408,7 +408,11 @@ try {
             padding: 40px;
             color: #666;
         }
-        
+        .table-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
         @media (max-width: 768px) {
             nav {
                 width: 200px;
