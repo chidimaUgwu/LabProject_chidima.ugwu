@@ -93,53 +93,60 @@ try {
         exit();
     }
     
+    // Prepare parameters array
+    $params = [
+        $fname, 
+        $lname, 
+        $userid, 
+        $dob, 
+        $gender, 
+        $email, 
+        $fullPhone, 
+        $address, 
+        $role, 
+        $hashedPassword
+    ];
+    
+    // Debug: Show parameters
+    error_log("Registration parameters: " . print_r($params, true));
+    
     // Insert new user
     $query = "INSERT INTO am_users (fname, lname, userid, dob, gender, email, phone, address, role, password) 
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
     $stmt = $db->prepare($query);
-    $stmt->execute([
-        $fname, $lname, $userid, $dob, $gender, $email, 
-        $fullPhone, $address, $role, $hashedPassword
-    ]);
     
-    echo "Parameters: ";
-    print_r($params);
-    echo "<br>";
-    
+    // Execute with parameters - ONLY ONCE
     $result = $stmt->execute($params);
     
     if ($result) {
         $lastId = $db->lastInsertId();
-        echo "Registration successful! User ID: $lastId<br>";
         
-        // Show what was inserted
-        $showQuery = "SELECT * FROM am_users WHERE id = ?";
-        $showStmt = $db->prepare($showQuery);
-        $showStmt->execute([$lastId]);
-        $newUser = $showStmt->fetch(PDO::FETCH_ASSOC);
+        // Debug log
+        error_log("Registration successful! User ID: $lastId");
         
-        echo "<h3>User inserted successfully:</h3>";
-        echo "<pre>";
-        print_r($newUser);
-        echo "</pre>";
-        
-        // Start session with success message (BUT DON'T LOG THEM IN!)
+        // Set success message in session
         $_SESSION['success_message'] = "Registration successful! Please login with your credentials.";
+        
+        // Debug: Check if session message is set
+        error_log("Success message set in session: " . $_SESSION['success_message']);
+        
+        // Redirect to login page
         header("Location: login.php");
         exit();
         
     } else {
-        echo "Registration failed!<br>";
-        echo "Error info: ";
-        print_r($stmt->errorInfo());
-        echo '<br><a href="register.php">Go back to registration</a>';
+        // Get error info
+        $errorInfo = $stmt->errorInfo();
+        error_log("Registration failed: " . print_r($errorInfo, true));
+        
+        header("Location: register.php?error=Registration failed. Database error.");
         exit();
     }
     
 } catch (PDOException $e) {
     error_log("Registration error: " . $e->getMessage());
-    header("Location: register.php?error=Registration failed. Please try again.");
+    header("Location: register.php?error=Registration failed: " . urlencode($e->getMessage()));
     exit();
 }
 ?>
