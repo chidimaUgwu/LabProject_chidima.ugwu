@@ -89,7 +89,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Reports - Faculty Intern Dashboard</title>
+    <title>Attendance Reports</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/style.css">
     <style>
@@ -188,21 +188,21 @@ try {
             cursor: pointer;
         }
         
-        #welcomeboard {
-            flex: 1;
-            padding: 50px;
-            margin-left: 250px;
-            background-color: #F2EAD3;
-        }
         
-        .welcome-section {
-            background: white;
-            border-radius: 10px;
-            padding: 35px;
-            box-shadow: 5px 5px 10px #3B0270;
-            margin: 25px;
-        }
-        
+    /* WELCOME BOARD */
+    #welcomeboard {
+        padding: 20px;
+        background: #F2EAD3;
+        width: 100%;
+    }
+
+    .welcome-section {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+      
         .welcome-section h1 {
             margin-bottom: 20px;
             text-align: center;
