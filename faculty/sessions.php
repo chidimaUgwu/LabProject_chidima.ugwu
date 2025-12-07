@@ -634,7 +634,7 @@ try {
             margin-right: auto;
         }
         
-        /* Modals */
+        /* MODAL STYLES - FIXED SCROLLING ISSUE */
         .modal {
             display: none;
             position: fixed;
@@ -645,15 +645,23 @@ try {
             height: 100%;
             background-color: rgba(0,0,0,0.5);
             backdrop-filter: blur(3px);
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        
+        body.modal-open {
+            overflow: hidden;
         }
         
         .modal-content {
             background-color: white;
-            margin: 50px auto;
+            margin: 20px auto;
             padding: 30px;
             border-radius: 12px;
             width: 90%;
             max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             animation: modalFadeIn 0.3s;
         }
@@ -670,6 +678,10 @@ try {
             margin-bottom: 25px;
             padding-bottom: 15px;
             border-bottom: 2px solid #e9ecef;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
         }
         
         .modal-header h3 {
@@ -687,10 +699,36 @@ try {
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s;
+            line-height: 1;
+            padding: 0 5px;
         }
         
         .close:hover {
             color: #343a40;
+        }
+        
+        .modal-body {
+            max-height: calc(90vh - 150px);
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
         
         .form-actions {
@@ -700,6 +738,10 @@ try {
             margin-top: 25px;
             padding-top: 20px;
             border-top: 1px solid #e9ecef;
+            position: sticky;
+            bottom: 0;
+            background: white;
+            z-index: 10;
         }
         
         /* Responsive */
@@ -774,6 +816,22 @@ try {
             th, td {
                 padding: 10px 12px;
             }
+            
+            .modal-content {
+                margin: 10px auto;
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .form-actions {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .form-actions button {
+                flex: 1;
+                min-width: 120px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -809,6 +867,15 @@ try {
             
             .welcome-section {
                 padding: 20px;
+            }
+            
+            .modal-content {
+                padding: 15px;
+            }
+            
+            .modal-header {
+                margin-bottom: 15px;
+                padding-bottom: 10px;
             }
         }
         
@@ -1097,65 +1164,66 @@ try {
                 <h3><i class="fas fa-plus-circle"></i> Schedule New Session</h3>
                 <span class="close" onclick="closeCreateModal()">&times;</span>
             </div>
-            <form method="POST" action="">
-                <input type="hidden" name="action" value="create">
-                
-                <div class="form-group mb-3">
-                    <label for="course_id">Course *</label>
-                    <select id="course_id" name="course_id" required>
-                        <option value="">Select a course</option>
-                        <?php foreach ($courses as $course): ?>
-                        <option value="<?php echo $course['id']; ?>">
-                            <?php echo htmlspecialchars($course['course_code']); ?> - <?php echo htmlspecialchars($course['course_name']); ?>
-                        </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-                
-                <div class="form-row mb-3">
-                    <div class="form-group">
-                        <label for="session_date">Date *</label>
-                        <input type="date" id="session_date" name="session_date" required>
+            <div class="modal-body">
+                <form method="POST" action="">
+                    <input type="hidden" name="action" value="create">
+                    
+                    <div class="form-group mb-3">
+                        <label for="course_id">Course *</label>
+                        <select id="course_id" name="course_id" required>
+                            <option value="">Select a course</option>
+                            <?php foreach ($courses as $course): ?>
+                            <option value="<?php echo $course['id']; ?>">
+                                <?php echo htmlspecialchars($course['course_code']); ?> - <?php echo htmlspecialchars($course['course_name']); ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="session_time">Time *</label>
-                        <input type="time" id="session_time" name="session_time" required>
-                    </div>
-                </div>
-                
-                <div class="form-row mb-3">
-                    <div class="form-group">
-                        <label for="duration_minutes">Duration (minutes)</label>
-                        <input type="number" id="duration_minutes" name="duration_minutes" value="60" min="15" max="240">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="attendance_code">Attendance Code</label>
-                        <div style="position: relative;">
-                            <input type="text" id="attendance_code" name="attendance_code" maxlength="20" placeholder="Leave empty for auto-generate" style="width: 100%; padding-right: 40px;">
-                            <button type="button" onclick="generateAttendanceCode()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #6c757d; cursor: pointer;" title="Generate Code">
-                                <i class="fas fa-redo"></i>
-                            </button>
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="session_date">Date *</label>
+                            <input type="date" id="session_date" name="session_date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="session_time">Time *</label>
+                            <input type="time" id="session_time" name="session_time" required>
                         </div>
                     </div>
-                </div>
-                
-                <div class="form-group mb-3">
-                    <label for="topic">Topic</label>
-                    <input type="text" id="topic" name="topic" maxlength="200" placeholder="Session topic or title">
-                </div>
-                
-                <div class="form-group mb-4">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location" maxlength="100" placeholder="Classroom or venue">
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="btn" onclick="closeCreateModal()">Cancel</button>
-                    <button type="submit" class="btn btn-success">Schedule Session</button>
-                </div>
-            </form>
+                    
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="duration_minutes">Duration (minutes)</label>
+                            <input type="number" id="duration_minutes" name="duration_minutes" value="60" min="15" max="240">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="attendance_code">Attendance Code</label>
+                            <div style="position: relative;">
+                                <input type="text" id="attendance_code" name="attendance_code" maxlength="20" placeholder="Leave empty for auto-generate" style="width: 100%; padding-right: 40px;">
+                                <button type="button" onclick="generateAttendanceCode()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #6c757d; cursor: pointer;" title="Generate Code">
+                                    <i class="fas fa-redo"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label for="topic">Topic</label>
+                        <input type="text" id="topic" name="topic" maxlength="200" placeholder="Session topic or title">
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" maxlength="100" placeholder="Classroom or venue">
+                    </div>
+                </form>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn" onclick="closeCreateModal()">Cancel</button>
+                <button type="submit" class="btn btn-success" onclick="document.querySelector('#createModal form').submit()">Schedule Session</button>
+            </div>
         </div>
     </div>
     
@@ -1166,24 +1234,25 @@ try {
                 <h3><i class="fas fa-edit"></i> Update Session Status</h3>
                 <span class="close" onclick="closeStatusModal()">&times;</span>
             </div>
-            <form method="POST" action="">
-                <input type="hidden" name="action" value="update_status">
-                <input type="hidden" id="status_session_id" name="session_id">
-                
-                <div class="form-group mb-4">
-                    <label for="status">Status</label>
-                    <select id="status" name="status" required class="form-control">
-                        <option value="upcoming">Upcoming</option>
-                        <option value="completed">Completed</option>
-                        <option value="cancelled">Cancelled</option>
-                    </select>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="btn" onclick="closeStatusModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Update Status</button>
-                </div>
-            </form>
+            <div class="modal-body">
+                <form method="POST" action="">
+                    <input type="hidden" name="action" value="update_status">
+                    <input type="hidden" id="status_session_id" name="session_id">
+                    
+                    <div class="form-group mb-4">
+                        <label for="status">Status</label>
+                        <select id="status" name="status" required class="form-control">
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn" onclick="closeStatusModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary" onclick="document.querySelector('#statusModal form').submit()">Update Status</button>
+            </div>
         </div>
     </div>
     
@@ -1194,27 +1263,28 @@ try {
                 <h3><i class="fas fa-exclamation-triangle"></i> Confirm Deletion</h3>
                 <span class="close" onclick="closeDeleteModal()">&times;</span>
             </div>
-            <form method="POST" action="">
-                <input type="hidden" name="action" value="delete">
-                <input type="hidden" id="delete_session_id" name="session_id">
-                
-                <div class="text-center p-4">
-                    <i class="fas fa-exclamation-circle fa-3x text-danger mb-3" style="opacity: 0.7;"></i>
-                    <h4 class="mb-2">Are you sure?</h4>
-                    <p class="text-muted">This action cannot be undone. The session will be permanently deleted.</p>
-                    <p class="text-muted"><small>Note: Sessions with attendance records cannot be deleted.</small></p>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="btn" onclick="closeDeleteModal()">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Delete Session</button>
-                </div>
-            </form>
+            <div class="modal-body">
+                <form method="POST" action="">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="hidden" id="delete_session_id" name="session_id">
+                    
+                    <div class="text-center p-4">
+                        <i class="fas fa-exclamation-circle fa-3x text-danger mb-3" style="opacity: 0.7;"></i>
+                        <h4 class="mb-2">Are you sure?</h4>
+                        <p class="text-muted">This action cannot be undone. The session will be permanently deleted.</p>
+                        <p class="text-muted"><small>Note: Sessions with attendance records cannot be deleted.</small></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn" onclick="closeDeleteModal()">Cancel</button>
+                <button type="submit" class="btn btn-danger" onclick="document.querySelector('#deleteModal form').submit()">Delete Session</button>
+            </div>
         </div>
     </div>
     
     <script>
-        // Modal Functions
+        // Modal Functions - FIXED SCROLLING ISSUE
         function openCreateModal() {
             // Set default date to tomorrow
             const tomorrow = new Date();
@@ -1227,35 +1297,35 @@ try {
             document.getElementById('session_time').value = nextHour.toTimeString().substr(0, 5);
             
             document.getElementById('createModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         }
         
         function closeCreateModal() {
             document.getElementById('createModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
         }
         
         function openStatusModal(id, currentStatus) {
             document.getElementById('status_session_id').value = id;
             document.getElementById('status').value = currentStatus;
             document.getElementById('statusModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         }
         
         function closeStatusModal() {
             document.getElementById('statusModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
         }
         
         function confirmDelete(id) {
             document.getElementById('delete_session_id').value = id;
             document.getElementById('deleteModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
         }
         
         function closeDeleteModal() {
             document.getElementById('deleteModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
         }
         
         // Close modals when clicking outside
@@ -1264,7 +1334,7 @@ try {
             modals.forEach(modal => {
                 if (event.target == modal) {
                     modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
+                    document.body.classList.remove('modal-open');
                 }
             });
         }
@@ -1272,9 +1342,10 @@ try {
         // Close modals with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeCreateModal();
-                closeStatusModal();
-                closeDeleteModal();
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.classList.remove('modal-open');
             }
         });
         
@@ -1329,6 +1400,7 @@ try {
             tableRows.forEach((row, index) => {
                 row.style.animationDelay = `${index * 0.05}s`;
                 row.style.animation = 'fadeIn 0.3s ease forwards';
+                row.style.opacity = '0';
             });
             
             // Add CSS for fadeIn animation
@@ -1340,26 +1412,13 @@ try {
                 }
             `;
             document.head.appendChild(style);
-        });
-        
-        // Confirm before leaving page if form has changes
-        let formChanged = false;
-        document.addEventListener('DOMContentLoaded', function() {
-            const forms = document.querySelectorAll('form');
-            forms.forEach(form => {
-                const inputs = form.querySelectorAll('input, select, textarea');
-                inputs.forEach(input => {
-                    input.addEventListener('input', () => formChanged = true);
-                    input.addEventListener('change', () => formChanged = true);
-                });
-            });
             
-            window.addEventListener('beforeunload', function(e) {
-                if (formChanged) {
-                    e.preventDefault();
-                    e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
-                }
-            });
+            // Trigger animations
+            setTimeout(() => {
+                tableRows.forEach(row => {
+                    row.style.opacity = '1';
+                });
+            }, 100);
         });
     </script>
 </body>
