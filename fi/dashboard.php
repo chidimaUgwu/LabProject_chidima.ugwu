@@ -216,29 +216,13 @@ try {
         border-radius: 20px;
         font-size: 12px;
     }
-
-    /* LOGOUT LINK */
-    nav a {
-        color: #c0392b;
-        font-size: 16px;
-        text-decoration: none;
-        padding: 8px 10px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition: 0.3s;
-    }
-
-    nav a:hover {
-        color: #e74c3c;
-    }
 </style>
 
 </head>
 <body>
     <div class="top">
         <div class="logo-container">
-            <img src="images/logo.png" alt="Company Logo" srcset="">
+            <img src="../images/logo.png" alt="Company Logo" srcset="">
             <h4 class="dashboard-title">FACULTY DASHBOARD</h4>
             <div class="user-info" style="margin-left: 500px; display: flex; align-items: center; gap: 10px;">
                 <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['fname'] . '+' . $_SESSION['lname']); ?>&background=4361ee&color=fff" alt="User"></div>
