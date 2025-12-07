@@ -188,21 +188,22 @@ try {
             cursor: pointer;
         }
         
+        #welcomeboard {
+            flex: 1;
+            padding: 100px;
+            margin-left: 250px;
+            background-color: #F2EAD3;
+            weight: 90%;
+        }
         
-    /* WELCOME BOARD */
-    #welcomeboard {
-        padding: 20px;
-        background: #F2EAD3;
-        width: 100%;
-    }
-
-    .welcome-section {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-      
+        .welcome-section {
+            background: white;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: 5px 5px 10px #3B0270;
+            margin: 25px;
+        }
+        
         .welcome-section h1 {
             margin-bottom: 20px;
             text-align: center;
@@ -425,7 +426,7 @@ try {
                 flex-direction: column;
             }
         }
-    </style>
+    </style>  
 </head>
 <body>
     <div class="top">
