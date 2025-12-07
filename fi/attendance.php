@@ -189,20 +189,26 @@ try {
         }
         
         #welcomeboard {
-            flex: 1;
-            padding: 100px;
-            margin-left: 250px;
-            background-color: #F2EAD3;
-            weight: 90%;
-        }
-        
-        .welcome-section {
-            background: white;
-            border-radius: 10px;
-            padding: 35px;
-            box-shadow: 5px 5px 10px #3B0270;
-            margin: 25px;
-        }
+    flex: 1;
+    margin-left: 250px;
+    padding: 40px 50px;            /* Reduced from 100px */
+    background-color: #F2EAD3;
+
+    max-width: calc(100vw - 250px); /* Prevent overflow */
+    overflow-x: hidden;
+}
+
+.welcome-section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px 35px;
+    box-shadow: 4px 4px 12px rgba(59, 2, 112, 0.3);
+    margin: auto;                    /* Center content */
+    
+    max-width: 1200px;               /* LIMIT SIZE SO IT DOES NOT STRETCH TOO LARGE */
+    width: 100%;
+}
+
         
         .welcome-section h1 {
             margin-bottom: 20px;
