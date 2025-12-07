@@ -595,7 +595,7 @@ try {
                                     </span>
                                 </td>
                                 <td>
-                                    <a href="../student/attendance.php?student_id=<?php echo $report['student_id']; ?>&course_id=<?php echo $course_filter ?: ''; ?>" 
+                                    <a href="attendance.php?student_id=<?php echo $report['student_id']; ?>&course_id=<?php echo $course_filter ?: ''; ?>" 
                                        class="btn" style="padding: 5px 10px; font-size: 12px;">
                                         <i class="fas fa-eye"></i> Details
                                     </a>
