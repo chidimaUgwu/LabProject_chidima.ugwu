@@ -54,9 +54,9 @@ try {
             $_SESSION['address'] = $user['address'];
 
             // Debug: Check what we're redirecting to
-            echo "BASE_URL: " . BASE_URL . "<br>";
-            echo "Redirecting to: " . BASE_URL . "fi/dashboard.php" . "<br>";
-            die("Debug stop");
+            // echo "BASE_URL: " . BASE_URL . "<br>";
+            // echo "Redirecting to: " . BASE_URL . "fi/dashboard.php" . "<br>";
+            // die("Debug stop");
             
             // FIX: Use absolute URLs with BASE_URL
             switch($user['role']) {
