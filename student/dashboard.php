@@ -475,21 +475,7 @@ try {
             </div>
         </div>
     </div>
-<!-- <body>
-    <div class="top">
-        <div class="logo-container">
-            <img src="../images/logo.png" alt="Company Logo" srcset="">
-            <h4 class="dashboard-title">STUDENT DASHBOARD</h4>
-            <div class="user-info">
-                <img src="https://ui-avatars.com/api/?name=<?php echo urlencode($_SESSION['fname'] . '+' . $_SESSION['lname']); ?>&background=4361ee&color=fff" alt="User">
-                <div class="user-details">
-                    <h4><?php echo htmlspecialchars($_SESSION['fname'] . ' ' . $_SESSION['lname']); ?></h4>
-                    <p><?php echo getRoleDisplayName($_SESSION['role']); ?></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    
+
     <div class="board">
         <nav>
             <a href="dashboard.php" class="active" data-section="dashboard"><i class="fas fa-home"></i> <span>Dashboard</span></a>
