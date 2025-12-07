@@ -88,7 +88,7 @@ try {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/style.css">
     <style>
-        * {
+        /* * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -205,7 +205,7 @@ try {
             font-weight: 500;
             box-shadow: 0 4px 12px rgba(244, 153, 26, 0.3);
         }
-        
+         */
         #welcomeboard {
             flex: 1;
             padding: 30px;
